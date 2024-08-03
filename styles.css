@@ -1,0 +1,216 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Аутентификация */
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.auth-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+}
+
+.auth-form h2 {
+    margin-bottom: 20px;
+    color: #f15c22;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.auth-form button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background: #f15c22;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: #d3471b;
+}
+
+.auth-form p {
+    color: #bbb;
+    margin-top: 15px;
+}
+
+.auth-form p span {
+    cursor: pointer;
+    color: #f15c22;
+}
+
+/* Основной контент */
+.hidden {
+    display: none;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #f15c22;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d3471b;
+}
+
+.hero-section {
+    background: url('hacker-theme.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.hero-section button {
+    padding: 10px 20px;
+    border: none;
+    background: #f15c22;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero-section button:hover {
+    background: #d3471b;
+}
+
+.content-section {
+    padding: 50px 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.service-box {
+    flex-basis: 30%;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #444;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

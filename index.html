@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="auth-container" class="auth-container">
+        <div class="auth-form">
+            <h2 id="auth-title">Вход в систему</h2>
+            <form id="auth-form">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Пароль" required>
+                <button type="submit" id="auth-button">Войти</button>
+                <p id="toggle-auth">Нет аккаунта? <span>Зарегистрироваться</span></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="content-container" class="hidden">
+        <header>
+            <nav>
+                <div class="logo">Secret Hub</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#" id="logout-link">Выйти</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home" class="hero-section">
+            <h1>Добро пожаловать в Secret Hub</h1>
+            <p>Платформа для избранных. Откройте секреты с нами.</p>
+            <button>Начать</button>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>О нас</h2>
+            <p>Мы предоставляем эксклюзивный доступ к уникальному контенту.</p>
+        </section>
+
+        <section id="services" class="content-section">
+            <h2>Наши Услуги</h2>
+            <div class="services-container">
+                <div class="service-box">
+                    <h3>Анализ данных</h3>
+                    <p>Профессиональный анализ и обработка данных.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Кибербезопасность</h3>
+                    <p>Защита ваших данных и конфиденциальности.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Разработка ПО</h3>
+                    <p>Создание и оптимизация программных решений.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>Контакты</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваше сообщение" required></textarea>
+                <button type="submit">Отправить сообщение</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Secret Hub. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
