@@ -10,59 +10,44 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
-// Аутентификация пользователя
 const auth = firebase.auth();
-const authContainer = document.getElementById('auth-container');
-const contentContainer = document.getElementById('content-container');
-const authForm = document.getElementById('auth-form');
-const authButton = document.getElementById('auth-button');
-const authTitle = document.getElementById('auth-title');
-const toggleAuth = document.getElementById('toggle-auth');
-const logoutLink = document.getElementById('logout-link');
 
-let isLogin = true; // Отслеживаем, находимся ли мы на странице входа или регистрации
+// Регистрация пользователя
+document.getElementById('register-form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-authForm.addEventListener('submit', (e) => {
+    const email = document.getElementById('reg-email').value;
+    const password = document.getElementById('reg-password').value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+        .then(() => {
+            alert('Регистрация успешна!');
+            window.location.href = 'dashboard.html'; // Переход в панель управления
+        })
+        .catch((error) => {
+            alert('Ошибка при регистрации: ' + error.message);
+        });
+});
+
+// Вход пользователя
+document.getElementById('login-form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    if (isLogin) {
-        auth.signInWithEmailAndPassword(email, password)
-            .then(() => {
-                authContainer.classList.add('hidden');
-                contentContainer.classList.remove('hidden');
-            })
-            .catch((error) => {
-                alert('Ошибка при входе: ' + error.message);
-            });
-    } else {
-        auth.createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                alert('Регистрация успешна!');
-                isLogin = true;
-                authTitle.innerText = 'Вход в систему';
-                authButton.innerText = 'Войти';
-                toggleAuth.innerHTML = 'Нет аккаунта? <span>Зарегистрироваться</span>';
-            })
-            .catch((error) => {
-                alert('Ошибка при регистрации: ' + error.message);
-            });
-    }
+    auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+            window.location.href = 'dashboard.html'; // Переход в панель управления
+        })
+        .catch((error) => {
+            alert('Ошибка при входе: ' + error.message);
+        });
 });
 
-toggleAuth.addEventListener('click', () => {
-    isLogin = !isLogin;
-    authTitle.innerText = isLogin ? 'Вход в систему' : 'Регистрация';
-    authButton.innerText = isLogin ? 'Войти' : 'Зарегистрироваться';
-    toggleAuth.innerHTML = isLogin ? 'Нет аккаунта? <span>Зарегистрироваться</span>' : 'Уже есть аккаунт? <span>Войти</span>';
-});
-
-logoutLink.addEventListener('click', () => {
+// Выход пользователя
+document.getElementById('logout-link').addEventListener('click', () => {
     auth.signOut().then(() => {
-        authContainer.classList.remove('hidden');
-        contentContainer.classList.add('hidden');
+        window.location.href = 'login.html'; // Возврат на страницу входа
     });
 });
